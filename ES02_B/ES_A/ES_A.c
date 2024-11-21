@@ -59,6 +59,9 @@ int main()
 void scriviFile(FILE* puntIn)
 {
     puntIn = fopen("prova1.dat", "wb");
+     if(puntIn == NULL) {
+        perror("Il programma non si può aprire!");
+    }
     Persona p;
 
     for (int i = 0; i < N; i++)
@@ -88,6 +91,9 @@ void scriviFile(FILE* puntIn)
 void stampaFile(FILE* puntIn)
 {
     puntIn = fopen("prova1.dat", "rb");
+     if(puntIn == NULL) {
+        perror("Il programma non si può aprire!");
+    }
     Persona p;
 
     printf("%-20s %-20s %-25s\n", "Cognome", "Nome", "Voti");
@@ -126,6 +132,9 @@ void stampaMedia(Persona p)
 int cercaCognome(FILE *puntIn, const char *cognome)
 {
     puntIn = fopen("prova1.dat","rb");
+    if(puntIn == NULL) {
+        perror("Il programma non si può aprire!");
+    }
     Persona p;
     int conta = 0;
 
@@ -168,6 +177,9 @@ void stampaVoti(Persona p)
 void correggiRecord(FILE *puntIn)
 {
     puntIn = fopen("prova1.dat","rb+");
+     if(puntIn == NULL) {
+        perror("Il programma non si può aprire!");
+    }
     Persona p;
     int flag = 0;
     while (fread(&p, sizeof(Persona), 1, puntIn) > 0)
@@ -193,6 +205,9 @@ void correggiRecord(FILE *puntIn)
 void contaRecord(FILE *puntIn)
 {
     puntIn = fopen("prova1.dat", "rb");
+     if(puntIn == NULL) {
+        perror("Il programma non si può aprire!");
+    }
     long posizione;
     fseek(puntIn, 0, SEEK_END);
     posizione = ftell(puntIn);
