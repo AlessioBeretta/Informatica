@@ -37,7 +37,7 @@ class Lista {
 			}
 			cout << endl;
 		}
-		void insertUltimo() {
+		void insertUltimo() {	// Inserisci ultimo elemento nella lista 
 			Nodo *p = new Nodo;
 			p -> info = rand()% 101;
 			p-> next = NULL;
