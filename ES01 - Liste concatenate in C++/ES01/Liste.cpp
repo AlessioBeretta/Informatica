@@ -1,4 +1,5 @@
 /* Beretta Alessio
+ 	Implementare una lista concatenata semplice con le operazioni di base: inserimento in testa, in coda, eliminazione, ricerca e visualizzazione.
 	Manipolazione delle liste
 */
 
@@ -89,7 +90,28 @@ class Lista {
 				
 			}
 			return 0;
-		}           
+		}
+		int ricercaNodo(int valore) {
+			nodo *q;
+			q = s;
+			while(q != NULL) {
+				if(q->info == valore) {
+					return 1;
+				}
+				q = q->next;
+			}
+			return 0;
+		}
+		int contaNodo() {
+			nodo *q;
+			int cont = 0;
+			q = s;
+			while(q != NULL) {
+				cont++;
+				q = q->next;
+			}
+			return cont;
+		}   
 }; 
 	int main () {
 	srand(time(0));
