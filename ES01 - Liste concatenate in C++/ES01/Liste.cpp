@@ -53,10 +53,10 @@ class Lista {
 			q -> next = p;
 			}
 		}
-		int getElemento() {  
+		int getElemento() {  // Restituisce l'elemento
 			return s->info;
 		}
-		void setElemento(int x) {
+		void setElemento(int x) { // Setto il valore dell'elemento
 			s->info = x;
 		}
 		int cancellaNodo() { // Cancellazione in testa del nodo
@@ -81,7 +81,7 @@ class Lista {
 			else { 
 				nodo *q,*p;
 				q = s;
-				while(q->next != NULL) {
+				while(q->next != NULL) { // Scorro il nodo fino all'ultimo nodo
 					p = q;
 					q = q->next;
 				}
@@ -91,18 +91,18 @@ class Lista {
 			}
 			return 0;
 		}
-		int ricercaNodo(int valore) {
+		int ricercaNodo(int valore) { // Ricerca di un nodo
 			nodo *q;
 			q = s;
 			while(q != NULL) {
-				if(q->info == valore) {
+				if(q->info == valore) { // Se il nodo è uguale al valore cercato
 					return 1;
 				}
 				q = q->next;
 			}
 			return 0;
 		}
-		int contaNodo() {
+		int contaNodo() { // Conta il numero dei nodi
 			nodo *q;
 			int cont = 0;
 			q = s;
