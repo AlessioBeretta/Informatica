@@ -5,7 +5,7 @@
 using namespace std;
 
 class Quadrilatero {
-	private:
+	protected:
 		double l1,l2,l3,l4;
 		public:
 			Quadrilatero(double l1,double l2);

@@ -24,7 +24,7 @@ class Lista {
 		nodo * insertTesta() {	// Inserimento in testa 
 			nodo *p;
 			p = new Nodo;
-			p->info = rand() % 101;
+			cin >> p->info;
 			p->next = s;
 			s = p;
 			return p;
@@ -40,7 +40,7 @@ class Lista {
 		}
 		void insertUltimo() {	// Inserisci ultimo elemento nella lista 
 			Nodo *p = new Nodo;
-			p -> info = rand()% 101;
+			cin >> p -> info;
 			p-> next = NULL;
 			if(s == NULL) {
 				s = p;
@@ -111,7 +111,27 @@ class Lista {
 				q = q->next;
 			}
 			return cont;
-		}   
+		}
+		void eliminaDuplicati() { // Elimina i duplicati
+			nodo *q,*p,*r;
+			q = s;
+			while(q->next != NULL) { // Scorro la lista
+				p = q;
+				r = q->next;
+				while(r != NULL) { 
+					if(q->info == r->info) { // Se il nodo è uguale al nodo successivo, lo elimino
+						p->next = r->next; 
+						delete(r);
+						r = p->next;
+					}
+					else { // Altrimenti scorro la lista
+						p = r;
+						r = r->next;
+					}
+				}
+				q = q->next;
+			}
+		}
 }; 
 	int main () {
 	srand(time(0));
@@ -120,8 +140,6 @@ class Lista {
 		L1.insertTesta();
 	}
 	L1.stampaLista();
-	 // L1.insertUltimo();
-	//L1.stampaQueue();
 	int k = L1.cancellaUltimo();
 	if(k ==1) {
 		cout << "no" << endl;
