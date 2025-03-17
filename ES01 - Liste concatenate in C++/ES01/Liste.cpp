@@ -24,7 +24,7 @@ class Lista {
 		nodo * insertTesta() {	// Inserimento in testa 
 			nodo *p;
 			p = new Nodo;
-			cin >> p->info;
+			p->info = rand() % 101;
 			p->next = s;
 			s = p;
 			return p;
@@ -40,7 +40,7 @@ class Lista {
 		}
 		void insertUltimo() {	// Inserisci ultimo elemento nella lista 
 			Nodo *p = new Nodo;
-			cin >> p -> info;
+			p -> info = rand() % 101;
 			p-> next = NULL;
 			if(s == NULL) {
 				s = p;
@@ -132,6 +132,28 @@ class Lista {
 				q = q->next;
 			}
 		}
+		void ordinaLista() { // Ordina lista con metodo BubbleSort
+			nodo *q, *p;
+			int temp, scambi = 0;;
+			if(s == NULL) { // Se la lista è vuota
+				return;
+			}
+			do { 
+				scambi = 0;
+				q = s;
+			while(q->next != NULL) { // Scorro la lista
+				p = q->next;
+				if(q->info > p->info) { // Ordino la lista
+					temp = q->info;
+					q->info = p->info;
+					p->info = temp;
+					scambi = 1;
+				}
+				q = q->next;
+			}
+		}
+		while(scambi == 1); // Continuo finche non ci sono piu scambi
+	}
 }; 
 	int main () {
 	srand(time(0));
@@ -140,11 +162,7 @@ class Lista {
 		L1.insertTesta();
 	}
 	L1.stampaLista();
-	int k = L1.cancellaUltimo();
-	if(k ==1) {
-		cout << "no" << endl;
-	}
-	else
+	cout << endl;
+	L1.ordinaLista();
 	L1.stampaLista();
-	return 0;
 }
