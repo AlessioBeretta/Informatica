@@ -1,0 +1,76 @@
+<!--
+Beretta Alessio
+Scrivere una semplice applicazione calcolatrice.
+Chiedere all'utente due numeri e una stringa che rappresenta un'operazione matematica,
+uno tra "+", "-", "*", "/", "**". Se l'input dell'utente è valido, calcola il risultato e lo mostra all'utente.
+Se l'input dell'utente non è valido, visualizza un messaggio che informa l'utente che si è verificato un errore.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+</head>
+<body>
+    <h1>Calcolatrice</h1>
+    <form id="calculator-form">
+      <!-- Campo per il primo numero -->
+        <label for="num1">Primo numero:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br>
+        <!-- Campo per il secondo numero -->
+        <label for="num2">Secondo numero:</label>
+        <input type="number" id="num2" name="num2" required>
+        <br>
+        <label for="operation">Operazione (+, -, *, /, **):</label>
+        <input type="text" id="operation" name="operation" required>
+        <br>
+        <button type="submit">Calcola</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('calculator-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Ottiene i valori inseriti dall'utente
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value.trim();
+            const resultElement = document.getElementById('result'); // Seleziona l'elemento dove mostrare il risultato
+
+            let result;
+
+            // Switch per determinare l'operazione da eseguire
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        resultElement.textContent = 'Errore: divisione per zero.';
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+                case '**': // Potenza
+                    result = num1 ** num2;
+                    break;
+                default: // Operazione non valida
+                    resultElement.textContent = 'Errore: operazione non valida.';
+                    return;
+            }
+            // Mostra il risultato nell'elemento HTML
+            resultElement.textContent = `Risultato: ${result}`;
+        });
+    </script>
+</body>
+</html> 
