@@ -1,3 +1,5 @@
+## Quarto anno di informatica: - Appunti per ripasso.
+
 ## File Binari:
 
 - FILE * nome = fopen("nome file", "modalità in cui puoi aprire il file)
