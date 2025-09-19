@@ -1,0 +1,5 @@
+.form {
+label input [type="url"], label input [type="text"], label input [type="file"], label input [type="submit"] {
+    margin-bottom: 15px;
+    }
+}
