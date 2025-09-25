@@ -1,5 +1,22 @@
-.form {
-label input [type="url"], label input [type="text"], label input [type="file"], label input [type="submit"] {
-    margin-bottom: 15px;
-    }
+form {
+  border-radius: 5px; /* Angoli arrotondati */
+  background-color: #f2f2f2; /* Colore di background */
+  padding: 20px; /* Spaziatura interna */
+}
+
+input[type=submit] {
+  width: 100%; /* Larghezza del testo */
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0; /* Spaziatura esterna */
+  border: none; /* Nessun bordo */
+  border-radius: 4px;
+  cursor: pointer; /* Cambia il cursore al passaggio */
+}
+
+input,
+select,
+textarea {
+    margin-bottom: 10px; /* Spaziatura tra i campi */
 }

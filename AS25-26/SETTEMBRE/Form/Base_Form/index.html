@@ -1,3 +1,9 @@
+<!--Beretta Alessio 5H 25/09/2025
+    Form con HTML e CSS -->
+
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -5,33 +11,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form METHOD="GET">
-        <div class="form"> 
+    <form METHOD="GET", action="page1.html"> <!-- Method: GET e POST; GET invia dati in maniera non sicura mentre POST invia in modo sicuro-->
         <label for ="fileInput">Foto Profilo:</label><br>
-        <input type="file" name="fileInput"><br>
+        <input type="file" name="fileInput"><br> <!--Serve ad inserire i file-->
         <label>Nome:</label><br>
-            <input type="text" name="Nome"><br>
+            <input type="text" name="Nome"><br> <!--Campo di testo-->
         <label>Cognome</label><br>
             <input type ="text" name ="Cognome"><br>
         <label>Genere:</label>
         <label>
-            <input type="radio" name ="Genere" value="M">Maschio 
+            <input type="radio" name ="Genere" value="M">Maschio <!--Radio button, si può selezionare solo una opzione-->
         </label>
         <label>
             <input type="radio" name = "Genere" value="F">Femmina
         </label><br>
         <label for ="birthday">Data di Nascita:<br>
-            <input type="date" id="birthday" name="birthday"><br>
+            <input type="date" id="birthday" name="birthday"><br> <!--Campo data-->
         </label>
         <label>Biografia:<br>
-            <textarea id="biografia" name="biografia" rows="4" cols="50"></textarea><br>
+            <textarea id="biografia" name="biografia" rows="4" cols="50"></textarea><br> <!--Area di testo-->
         </label>
-        <label for="homepage">Aggiungi il tuo sito:</label>
+        <label for="homepage">Aggiungi il tuo sito:</label> <!--Campo URL-->
         <input type="url" id="sito" name="sito"><br>
         <label>Aggiungi il nome del tuo sito:</label>
         <input type="text" id="nomesito" name="nomesito"><br>
-        <input type="submit"></button>
+        <input type="submit" value="Invia"> <!--Pulsante di invio-->
     </form>
-    </div>
 </body>
 </html>
