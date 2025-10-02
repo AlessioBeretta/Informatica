@@ -1,12 +1,18 @@
 /* Beretta Alessio 5H 25/09/2025
     Form con HTML e CSS */
 
-form {
+.box {
   border-radius: 5px; /* Angoli arrotondati */
-  background-color: #f2f2f2; /* Colore di background */
+  background-color:  #f2f2f2; /* Colore di background */
   padding: 20px; /* Spaziatura interna */
+  border: 5px solid #000000; /* Bordo grigio chiaro */
 }
 
+.logo img {
+    border-radius: 40%; /* Rende l'immagine circolare */
+    border: 3px solid #000000; /* Bordo nero */
+    float: right; /* Sposta l'immagine a destra */
+  }
 input[type=submit] {
   width: 100%; /* Larghezza del testo */
   background-color: #4CAF50;
