@@ -1,0 +1,18 @@
+input[type=submit], button {
+    width: 10%; /* Larghezza del testo */
+    background-color: #11aa25;
+    color: white;
+    padding: 14px;
+    margin: 8px 0; 
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer; 
+  }
+/* Spaziatura tra i campi numerici e l'area dell'operazione */
+input[type="number"] {
+  margin-right: 8px;
+  margin-bottom: 12px; 
+}
+select#operazioni {
+  margin-bottom: 12px; 
+}
